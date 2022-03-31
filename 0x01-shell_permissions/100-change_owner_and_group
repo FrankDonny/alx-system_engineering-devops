@@ -1,2 +1,2 @@
 #!/bin/bash
-chgrp vincent:staff *
+su chown vincent:staff
