@@ -1,2 +1,2 @@
 #!/bin/bash
-cut -d' ' -f1 file
+cut -c1 | paste -s |tr -d "[:blank:]"
