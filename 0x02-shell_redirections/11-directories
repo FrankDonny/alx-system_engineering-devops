@@ -1,2 +1,2 @@
 #!/bin/bash
-tree -la ~/
+find . -type d ! -path . -print | wc -la
