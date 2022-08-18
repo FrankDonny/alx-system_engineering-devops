@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#for loop to list the content of the current directory
+
+for i in cut
+do
+	ls | $i -d "-" -f 2
+done
+	

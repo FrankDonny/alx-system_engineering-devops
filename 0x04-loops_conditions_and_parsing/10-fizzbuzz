@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#FizzBuzz bash script
+i=1
+three=3
+five=5
+while [ $i -le 100 ]
+do
+	if [ "$(( i / three ))" -eq 0 ] && [ "$(( i / five ))" -eq 0 ]
+	then
+		echo "FizzBuzz"
+	elif [ "$(( i / three ))" -eq 0 ]
+	then
+		echo "Fizz"
+	elif [ "$(( i / five ))" -eq 0 ]
+	then
+		echo "Buzz"
+	else
+		echo "$i"
+	fi
+	(( i++ ))
+done
