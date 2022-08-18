@@ -4,5 +4,4 @@
 for i in cut
 do
 	ls | $i -d "-" -f 2
-done
-	
+done	
