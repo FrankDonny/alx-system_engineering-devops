@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#script that stops the previous task infinity loop
+kill $(ps axu | grep 4-to_infinity_and_beyond | awk '{print $2}')
