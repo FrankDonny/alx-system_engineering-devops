@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 #create a story out of /etc/passwd file
-while read -r line
+# shellcheck disable=
+
+while read -r name pass U_ID G_ID GECOS HD SH_NAME
 do
 	IFS=:
-	set $line
-	echo "The user $1 is part of the $4 gang, lives in $6 and rides $7. $3's place is protected by the passcode $2, more info about the user here: $5"
+	echo "The user $name is part of the $G_ID gang, lives in $HD and rides $SH_NAME. $U_ID's place is protected by the passcode $pass, more info about the user here: $GECOS"
 done < /etc/passwd
