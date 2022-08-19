@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#create a story out of /etc/passwd file
+while read -r line
+do
+	IFS=:
+	set $line
+	echo "The user $1 is part of the $4 gang, lives in $6 and rides $7. $3's place is protected by the passcode $2, more info about the user here: $5"
+done < /etc/passwd
