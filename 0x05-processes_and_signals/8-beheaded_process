@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 #script that stops the previous task infinity loop
-kill -9 $(ps axu | grep 7-highlander | awk '{print $2}')
+kill -9 "$(pgrep | grep 7-highlander | awk '{print $2}')"
