@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 #create a story out of /etc/passwd file
-# shellcheck disable=
 
 while read -r name pass U_ID G_ID GECOS HD SH_NAME
 do
