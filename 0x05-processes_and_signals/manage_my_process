@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #managing my processes
 
-file='my_process'
+file='/tmp/my_process'
 while true
 do
 	echo "I am alive!" >> $file

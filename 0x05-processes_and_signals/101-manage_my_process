@@ -2,7 +2,7 @@
 # manages manage_my_process file
 
 manp='manage_my_process'
-filename='process.pid'
+filename='/var/run/process.pid'
 if [ "$1" == "start" ]
 then
 	./manage_my_process &
