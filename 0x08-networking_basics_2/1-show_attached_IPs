@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# script to display active IPv4
+ifconfig | tr -s " " " " | grep "inet\b" | cut -d " " -f 3
