@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # script to configure ubuntu server
-host='/etc/hosts'
-echo "	" >> $host
-echo "127.0.0.2 localhost" >> $host
-echo "8.8.8.8 facebook.com" >> $host
+cp /etc/hosts ~/hosts.new
+echo "127.0.0.2 localhost" > ~/hosts.new
+echo "8.8.8.8 facebook.com" >> ~/hosts.new
+cp -f ~/hosts.new /etc/hosts
