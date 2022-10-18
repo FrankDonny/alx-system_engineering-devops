@@ -1,0 +1,3 @@
+exec {'nginx':
+  ensure => 'installed'
+}
