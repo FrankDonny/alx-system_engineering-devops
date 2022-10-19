@@ -1,6 +1,7 @@
-# Install and configure nginx
+# Install nginx with puppet and configure it
+
 package { 'nginx':
-  ensure => installed
+  ensure => 'installed'
 }
 
 include nginx
