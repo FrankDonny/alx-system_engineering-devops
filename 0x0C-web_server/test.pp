@@ -1,3 +1,3 @@
-exec {'nginx':
+package {'nginx':
   ensure => 'installed'
 }
