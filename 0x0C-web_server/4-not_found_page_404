@@ -20,16 +20,17 @@ echo "server {
     server_name _;
     location / {
                 # First attempt to serve request as file, then
-                # as directory, then fall back to displaying an err_page.html.
-                try_files \$uri \$uri/ =/var/www/html/err_page.html;
+                # as directory, then fall back to displaying an 404.
+                try_files \$uri \$uri/ =404;
     }
     location /redirect_me{
-        return 301 https://www.alxafrica.com =/var/www/html/err_page.html;
+        return 301 https://www.alxafrica.com;
     }
     
     location = /err_page.html {
         root /var/www/html;
         internal;
+    }
 }" > sites-available/default
 sudo chmod 644 sites-available/default
 sudo chmod 755 sites-available
