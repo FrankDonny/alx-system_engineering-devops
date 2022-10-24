@@ -15,18 +15,14 @@ echo "server {
     listen 80 default_server;
     listen [::]:80 default_server;
     error_page 404 /err_page.html;
-
     root /var/www/html;
-
     index index.html index.htm index.nginx-debian.html;
     server_name _;
-
     location / {
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying an err_page.html.
                 try_files \$uri \$uri/ =/var/www/html/err_page.html;
     }
-
     location /redirect_me{
         return 301 https://www.alxafrica.com =/var/www/html/err_page.html;
     }
