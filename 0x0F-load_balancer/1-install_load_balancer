@@ -40,12 +40,11 @@ echo 'global
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
         
-    frontend http_front
-        bind *:80
+    frontend front
+        bind :80
         default_backend back_servers
 
     backend back_servers
         balance roundrobin
-        servers 30022-web-01 44.197.231.3 check
-        servers 30022-web-02 100.25.4.135 check' | sudo tee haproxy.cfg
-sudo service haproxy restart
+        server 30022-web-01 44.197.231.3:80 check
+        server 30022-web-02 100.25.4.135:80 check' | sudo tee /etc/haproxy/haproxy.cfg
