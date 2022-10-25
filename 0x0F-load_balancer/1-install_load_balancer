@@ -46,5 +46,5 @@ echo 'global
 
     backend back_servers
         balance roundrobin
-        server 30022-web-01 44.197.231.3:80 check
-        server 30022-web-02 100.25.4.135:80 check' | sudo tee /etc/haproxy/haproxy.cfg
+        server web-01 44.197.231.3:80 check
+        server web-02 100.25.4.135:80 check' | sudo tee /etc/haproxy/haproxy.cfg
