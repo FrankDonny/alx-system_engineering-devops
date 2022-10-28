@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Configure domain zone so that the subdomain points to load-balancer
+
+domain=$1
+subdomains='www lb-01 web-01 web-02'
+if (( $# == 2 ))
+then
+	subdomains="$2"
+fi
+
+display_info() {
+	for name in $subdomains
+	do
+		printf "The subdomain %s is a " "$name"
+		dig "$name.$domain" | grep -A1 'ANSWER SECTION:' | tail -n1 | awk '{print $4 " record and points to " $5}'
+	done
+}
+
+display_info
