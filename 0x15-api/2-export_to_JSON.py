@@ -20,7 +20,9 @@ def main():
             ls.append(item['username'])
     for dict_ in response1:
         if dict_['userId'] == int(argv[1]):
-            new_dict = {"task": dict_['title'], "completed": dict_['completed'], "username": ls[0]}
+            new_dict = {"task": dict_['title'],
+                        "completed": dict_['completed'],
+                        "username": ls[0]}
             dict_list.append(new_dict)
     contain[argv[1]] = dict_list
     with open(argv[1] + '.json', 'w', encoding="utf-8") as file:
