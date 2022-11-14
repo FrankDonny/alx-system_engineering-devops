@@ -24,7 +24,7 @@ def main():
             ct += 1
             if dict_['completed'] == bool('True'):
                 true_ += 1
-                titles = titles + '\t' + dict_['title'] + '\n'
+                titles = titles + '\t ' + dict_['title'] + '\n'
 
     print("Employee {} is done with tasks({}/{}):\n{}".
           format(ls[0], true_, ct, titles))
