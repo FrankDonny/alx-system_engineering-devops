@@ -12,18 +12,20 @@ def main():
     response1 = requests.get(base1).json()
     response2 = requests.get(base2).json()
 
-    with open("2.csv", "w") as file:
-        writer = csv.writer(file)
-        ls = []
-        for dict_ in response1:
-            for user in response2:
-                if user['id'] == int(argv[1]):
-                    ls.append(user['username'])
-                    break
-            if dict_['userId'] == int(argv[1]):
-                tup = ('{}'.format(argv[1]), ls[0], dict_['completed'],
-                       dict_['title'])
-                writer.writerow(tup)
+    ls = []
+    tup_list = []
+    for dict_ in response1:
+        for user in response2:
+            if user['id'] == int(argv[1]):
+                ls.append(user['username'])
+                break
+        if dict_['userId'] == int(argv[1]):
+            tup = ('{}'.format(argv[1]), ls[0], dict_['completed'],
+                   dict_['title'])
+            tup_list.append(tup)
+    with open(argv[1] + ".csv", "w") as file:
+        for i in tup_list:
+            csv.writer(file).writerow(i)
 
 
 if __name__ == "__main__":
