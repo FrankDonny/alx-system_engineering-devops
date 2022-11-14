@@ -3,7 +3,9 @@
 import requests
 from sys import argv
 
+
 def main():
+    """main code to be run"""
     base1 = "https://jsonplaceholder.typicode.com/todos/"
     base2 = "https://jsonplaceholder.typicode.com/users/"
     response1 = requests.get(base1).json()
@@ -26,6 +28,7 @@ def main():
 
     print("Employee {} is done with tasks({}/{}):\n{}".
           format(ls[0], true_, ct, titles))
+
 
 if __name__ == "__main__":
     main()
