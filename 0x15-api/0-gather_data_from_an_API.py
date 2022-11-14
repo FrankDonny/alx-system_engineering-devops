@@ -27,7 +27,7 @@ def main():
                 titles = titles + '\t ' + dict_['title'] + '\n'
 
     print("Employee {} is done with tasks({}/{}):\n{}".
-          format(ls[0], true_, ct, titles))
+          format(ls[0], true_, ct, titles[:-1] + ''))
 
 
 if __name__ == "__main__":
