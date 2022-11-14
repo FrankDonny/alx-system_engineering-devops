@@ -23,7 +23,7 @@ def main():
             tup_list.append(tup)
     with open(argv[1] + ".csv", "w") as file:
         for i in tup_list:
-            csv.writer(file).writerow(i)
+            csv.writer(file, quoting=csv.QUOTE_ALL).writerow(i)
 
 
 if __name__ == "__main__":
