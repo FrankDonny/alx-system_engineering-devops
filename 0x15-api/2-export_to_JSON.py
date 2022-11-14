@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """gather data from api using this module and parse into csv"""
-import csv
+import json
 import requests
 from sys import argv
 
@@ -13,17 +13,18 @@ def main():
     response2 = requests.get(base2).json()
 
     ls = []
-    tup_list = []
+    dict_list = []
+    contain = {}
+    for item in response2:
+        if item['id'] == int(argv[1]):
+            ls.append(item['username'])
     for dict_ in response1:
-        for item in response2:
-            if item['id'] == int(argv[1]):
-                ls.append(item['username'])
         if dict_['userId'] == int(argv[1]):
-            tup = (argv[1], ls[0], str(dict_['completed']), dict_['title'])
-            tup_list.append(tup)
-    with open(argv[1] + ".csv", "w") as file:
-        for i in tup_list:
-            csv.writer(file).writerow(i)
+            new_dict = {"task": dict_['title'], "completed": dict_['completed'], "username": ls[0]}
+            dict_list.append(new_dict)
+    contain[argv[1]] = dict_list
+    with open(argv[1] + '.json', 'w', encoding="utf-8") as file:
+        json.dump(contain, file)
 
 
 if __name__ == "__main__":
